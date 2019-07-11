@@ -14,10 +14,12 @@ end
 def apply_coupons(cart, coupons)
   coupons.size.times do |i|
     item = coupons[i][:item]
-    count = coupons[i][:num]
+    quantity = coupons[i][:num]
     new_price = coupons[i][:cost]/count
     
-    if cart[item][:count] > 0
+    if cart[item][:count] >= quantity
+      
+    end
     
 end
 
@@ -47,4 +49,10 @@ cart = [
 #      {"SOY MILK" => {:price => 4.50, :clearance => true}}
     ]
     
-puts consolidate_cart(cart)
+coupons = [
+      {:item => "AVOCADO", :num => 2, :cost => 5.00},
+      {:item => "BEER", :num => 2, :cost => 20.00},
+      {:item => "CHEESE", :num => 3, :cost => 15.00}
+    ]    
+    
+puts apply_coupons(cart,coupons)

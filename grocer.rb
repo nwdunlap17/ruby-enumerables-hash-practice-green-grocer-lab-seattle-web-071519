@@ -20,7 +20,7 @@ def apply_coupons(cart, coupons)
     if cart[item][:count] >= quantity
       
     end
-    
+  end
 end
 
 def apply_clearance(cart)

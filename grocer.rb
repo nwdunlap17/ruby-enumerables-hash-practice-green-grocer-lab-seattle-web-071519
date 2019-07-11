@@ -74,4 +74,5 @@ coupons = [
     ]    
 
 cart = consolidate_cart(cart)
-puts apply_coupons(cart,coupons)
+#apply_coupons(cart,coupons)
+puts apply_clearance(cart)

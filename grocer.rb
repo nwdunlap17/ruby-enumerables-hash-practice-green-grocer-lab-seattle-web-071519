@@ -34,6 +34,7 @@ def apply_coupons(cart, coupons)
 end
 
 def apply_clearance(cart)
+  p cart
   cart.each do |item|
     p item
   end

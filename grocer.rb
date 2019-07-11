@@ -4,6 +4,8 @@ def consolidate_cart(cart)
     item = cart[i].keys[0]
     if checkoutLine[item] === nil 
       checkoutLine[item] = {:price => cart[i][item][:price], :clearance => cart[i][item][:clearance], :count => 1}
+    else
+      checkoutLine[item][:count] += 1
     end
   end
   return checkoutLine

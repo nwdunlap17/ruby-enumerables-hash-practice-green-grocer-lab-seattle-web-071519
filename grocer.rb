@@ -15,7 +15,7 @@ def apply_coupons(cart, coupons)
   coupons.size.times do |i|
     item = coupons[i][:item]
     count = coupons[i][:num]
-    new_price = coupons[i][:cost]
+    new_price = coupons[i][:cost]/count
 end
 
 def apply_clearance(cart)

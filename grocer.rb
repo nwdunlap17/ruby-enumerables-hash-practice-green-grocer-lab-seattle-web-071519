@@ -16,6 +16,9 @@ def apply_coupons(cart, coupons)
     item = coupons[i][:item]
     count = coupons[i][:num]
     new_price = coupons[i][:cost]/count
+    
+    if cart[item][:count] > 0
+    
 end
 
 def apply_clearance(cart)

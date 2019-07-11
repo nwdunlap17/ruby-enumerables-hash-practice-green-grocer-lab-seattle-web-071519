@@ -43,11 +43,10 @@ def apply_clearance(cart)
 end
 
 def checkout(cart, coupons)
-  sum = 0 
-  cart.each do |item|
-    sum += item[:price]
-  end
-  return sum
+  cart = consolidate_cart(cart)
+  cart =apply_coupons(cart,coupons)
+  cart = apply_clearance(cart)
+  
 end
 
 cart = [
@@ -74,5 +73,5 @@ coupons = [
     ]    
 
 cart = consolidate_cart(cart)
-#apply_coupons(cart,coupons)
-puts apply_clearance(cart)
+cart =apply_coupons(cart,coupons)
+cart = apply_clearance(cart)

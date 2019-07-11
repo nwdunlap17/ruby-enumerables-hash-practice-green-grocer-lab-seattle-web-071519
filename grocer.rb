@@ -17,7 +17,7 @@ def apply_coupons(cart, coupons)
     quantity = coupons[i][:num]
     new_price = coupons[i][:cost]/quantity
     
-    if cart[item] !== nil
+    if cart[item] != nil
       
     end
   end

@@ -47,6 +47,11 @@ def checkout(cart, coupons)
   cart =apply_coupons(cart,coupons)
   cart = apply_clearance(cart)
   
+  total = 0
+  cart.size.times do [i]
+    total += cart[i][0][:price]
+  end
+  return total
 end
 
 cart = [

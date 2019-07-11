@@ -15,7 +15,7 @@ def apply_coupons(cart, coupons)
   coupons.size.times do |i|
     item = coupons[i][:item]
     quantity = coupons[i][:num]
-    new_price = coupons[i][:cost]/count
+    new_price = coupons[i][:cost]/quantity
     
     if cart[item][:count] >= quantity
       

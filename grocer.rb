@@ -34,9 +34,9 @@ def apply_coupons(cart, coupons)
 end
 
 def apply_clearance(cart)
-  cart.each do |i|
-    if i[:clearance]
-      i[:price] *= 0.8
+  cart.each do |item|
+    if item[:clearance] == true
+      item[:price] *= 0.8
     end
   end
   return cart

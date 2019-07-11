@@ -18,7 +18,10 @@ def apply_coupons(cart, coupons)
     new_price = coupons[i][:cost]/quantity
     
     if cart[item] != nil
-      
+      if cart[item][:count] >= quantity
+        cart[item][:count] -= quantity
+        cart[item+" W/COUPON"] = {:price => new_price, :clearance => cart[item][:clearance], :count => quantity}
+      end
     end
   end
   return cart
@@ -52,8 +55,8 @@ cart = [
     
 coupons = [
       {:item => "AVOCADO", :num => 2, :cost => 5.00},
-      {:item => "BEER", :num => 2, :cost => 20.00},
-      {:item => "CHEESE", :num => 3, :cost => 15.00}
+      #{:item => "BEER", :num => 2, :cost => 20.00},
+      #{:item => "CHEESE", :num => 3, :cost => 15.00}
     ]    
 
 cart = consolidate_cart(cart)

@@ -49,7 +49,7 @@ def checkout(cart, coupons)
   
   total = 0
   cart.each do |item|
-    total += item[1][:price]
+    total += item[1][:price]*item[1][:count]
   end
   return total
 end

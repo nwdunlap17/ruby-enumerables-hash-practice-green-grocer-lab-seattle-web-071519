@@ -20,8 +20,10 @@ def apply_coupons(cart, coupons)
     if cart[item] != nil
       if cart[item][:count] >= quantity
         cart[item][:count] -= quantity
+        
         if cart[item+" W/COUPON"] == nil
           cart[item+" W/COUPON"] = {:price => new_price, :clearance => cart[item][:clearance], :count => quantity}
+          
         else
           cart[item+"W/COUPON"][:count]+=quantity
         end
@@ -47,7 +49,7 @@ cart = [
       {"AVOCADO" => {:price => 3.00, :clearance => true}},
       {"AVOCADO" => {:price => 3.00, :clearance => true}},
       {"AVOCADO" => {:price => 3.00, :clearance => true}},
-      {"AVOCADO" => {:price => 3.00, :clearance => true}},
+      {"AVOCADO" => {:price => 3.00, :clearance => true}}
 #      {"KALE" => {:price => 3.00, :clearance => false}},
 #      {"BLACK_BEANS" => {:price => 2.50, :clearance => false}},
 #      {"ALMONDS" => {:price => 9.00, :clearance => false}},
@@ -61,7 +63,7 @@ cart = [
     
 coupons = [
       {:item => "AVOCADO", :num => 2, :cost => 5.00},
-      {:item => "AVOCADO", :num => 2, :cost => 5.00},
+      {:item => "AVOCADO", :num => 2, :cost => 5.00}
       #{:item => "BEER", :num => 2, :cost => 20.00},
       #{:item => "CHEESE", :num => 3, :cost => 15.00}
     ]    

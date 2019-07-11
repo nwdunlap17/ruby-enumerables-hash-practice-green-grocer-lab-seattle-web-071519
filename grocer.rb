@@ -77,4 +77,4 @@ coupons = [
       #{:item => "CHEESE", :num => 3, :cost => 15.00}
     ]    
 
-p apply_clearance(cart)
+p checkout(cart,coupons)

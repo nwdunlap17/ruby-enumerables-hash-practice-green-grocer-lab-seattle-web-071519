@@ -3,7 +3,7 @@ def consolidate_cart(cart)
   cart.size.times do |i|
     item = cart[i].keys[0]
     if checkoutLine[item] === nil 
-      checkoutLine[item] = {:price => 0, :clearance => false}
+      checkoutLine[item] = {:price => cart[i][item][:price], :clearance => false}
     end
   end
   return checkoutLine

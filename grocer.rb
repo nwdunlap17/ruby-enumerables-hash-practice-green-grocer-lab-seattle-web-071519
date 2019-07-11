@@ -34,9 +34,11 @@ def apply_coupons(cart, coupons)
 end
 
 def apply_clearance(cart)
-  p cart
   cart.each do |item|
     p item[0]
+    if cart[item[0]][:clearance] 
+      
+    end
   end
   return cart
 end

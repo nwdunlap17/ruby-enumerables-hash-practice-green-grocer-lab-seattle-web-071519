@@ -48,8 +48,8 @@ def checkout(cart, coupons)
   p cart = apply_clearance(cart)
   
   total = 0
-  cart.size.times do |i|
-    p cart[i]
+  cart.each do |item|
+    p cart[item]
   end
   return total
 end

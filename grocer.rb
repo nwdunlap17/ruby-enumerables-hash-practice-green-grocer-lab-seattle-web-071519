@@ -49,7 +49,7 @@ def checkout(cart, coupons)
   
   total = 0
   cart.each do |item|
-    p item
+    p item[0]
   end
   return total
 end

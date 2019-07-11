@@ -20,7 +20,7 @@ def apply_coupons(cart, coupons)
     if cart[item] != nil
       if cart[item][:count] >= quantity
         cart[item][:count] -= quantity
-        if cart[item+" W/COUPON"] != nil
+        if cart[item+" W/COUPON"] == nil
           cart[item+" W/COUPON"] = {:price => new_price, :clearance => cart[item][:clearance], :count => quantity}
         else
           cart[item+"W/COUPON"][:count]+=quantity

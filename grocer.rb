@@ -1,5 +1,11 @@
 def consolidate_cart(cart)
-  # code here
+  checkoutLine = {}
+  cart.each do |item|
+    if checkoutLine[item] != nil 
+      checkoutLine.item = item
+      checkoutLine.item{:count => 1}
+    end
+  end   
 end
 
 def apply_coupons(cart, coupons)
@@ -11,5 +17,9 @@ def apply_clearance(cart)
 end
 
 def checkout(cart, coupons)
-  # code here
+  sum = 0 
+  cart.each do |item|
+    sum += item[:price]
+  end
+  return sum
 end

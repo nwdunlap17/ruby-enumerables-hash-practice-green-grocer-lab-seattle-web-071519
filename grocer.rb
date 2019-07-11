@@ -77,6 +77,4 @@ coupons = [
       #{:item => "CHEESE", :num => 3, :cost => 15.00}
     ]    
 
-cart = consolidate_cart(cart)
-cart =apply_coupons(cart,coupons)
-cart = apply_clearance(cart)
+p apply_clearance(cart)

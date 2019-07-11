@@ -49,7 +49,7 @@ def checkout(cart, coupons)
   
   total = 0
   cart.size.times do |i|
-    total += cart[i][0][:price]
+    p cart[i]
   end
   return total
 end

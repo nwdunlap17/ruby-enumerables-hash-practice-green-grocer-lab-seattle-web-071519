@@ -3,7 +3,6 @@ def consolidate_cart(cart)
   cart.each do |item|
     if checkoutLine[item] != nil 
       checkoutLine.item = item
-      checkoutLine.item{:count => 1}
     end
   end   
 end

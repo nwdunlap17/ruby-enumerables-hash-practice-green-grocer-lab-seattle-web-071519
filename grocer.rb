@@ -48,7 +48,7 @@ def checkout(cart, coupons)
   p cart = apply_clearance(cart)
   
   total = 0
-  cart.size.times do [i]
+  cart.size.times do |i|
     total += cart[i][0][:price]
   end
   return total
